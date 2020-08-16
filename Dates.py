@@ -20,4 +20,4 @@ print('Year: ' + str(current_date.year))
 birthday = input('What is your birthday (dd/mm/yyyy)? ')
 # creates a datetime object from the given string.
 birthday_date = datetime.strptime(birthday, '%d/%m/%Y') # strip time out of a string
-print('Birthday: ' + str(birthday_date))
+print('Birthday: ' + str(birthday_date)) 
