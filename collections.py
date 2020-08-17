@@ -21,9 +21,9 @@ print(names)
 names.sort()
 print(names)
 
-graplist = names[1:3] # grap these items from the list including the start idx but not the end idx 
-                      # also with [:3] => grap from 0 to 3
-print(graplist)
+greplist = names[1:3] # grep these items from the list including the start idx but not the end idx 
+                      # also with [:3] => grap from 0 to 2
+print(greplist)
 
 print()
 
@@ -39,7 +39,7 @@ print(new_scores[1])
 print()
 
 ########### Dictionaries => key-value pairs (key here is the replacement of numeric index) ################
-#### Unlike listed the order is not gurnteed, some libs give the options for order gurntee ####
+#### Unlike lists the order is not gurnteed, some libs give the options for order gurntee ####
 person = {'first': 'Alaa', 'second': 'Hisham'}
 person['last'] = 'Hossam' # in [] the key is specified and the value after the = sign
 print(person)
