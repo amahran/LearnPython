@@ -18,6 +18,9 @@ Virtual enviornments can be used to contain and manage package collections (just
 # Install virual envioronment
 pip install virtualenv # has to be done globally
 
+# Note to skip SSL in pip
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org
+
 # Windows systems
 python -m venv <folder_name> # -m to grap a particular module, foldername 'env' for example
 

@@ -1,3 +1,3 @@
 import helpers
 
-helpers.display('Sample message')
+helpers.display('Sample message', True)
