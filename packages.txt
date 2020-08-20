@@ -1,5 +1,8 @@
 # To find packages (a published collection of moduless) visit python Package Index)
 
+# Note to skip SSL in pip
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org
+
 # Install an individual package
 pip install colorama # colorama helpign change the color of text during a print
 
@@ -9,32 +12,32 @@ pip install -r requirements.txt
 # requirements.txt
 colorama
 
-############ Virtual enviornments
+#------------------ Virtual enviornments ------------------#
+
 By default Packages are installed globally
 - But then version management becomes a challenge (e.g. new version might screw the old impl or a nother college using it he has to install the same packages)
 
 Virtual enviornments can be used to contain and manage package collections (just a folder behind the scens with all your packages)
 
-# Install virual envioronment
+##################### Install virual envioronment
 pip install virtualenv # has to be done globally
 
-# Note to skip SSL in pip
-pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org
-
+##################### Create virual envioronment
 # Windows systems
 python -m venv <folder_name> # -m to grap a particular module, foldername 'env' for example
 
 # OSX/Linux (bash)
 virtualenv <folder_name>
 
-# Using virual enviornments
+##################### Using virual enviornments
 
-#Windows (cmd.exe)
+## Windows
+#cmd.exe
 <folder_name>\Scripts\Activate.bat
 #Pewershell
 <folder_name>\Scripts\Activate.ps1
 #bash shell
 ../<folder_name>/Scripts/activate
 
-# OSX\Linux (Bash)
+## OSX\Linux (Bash)
 <folder_name>/bin/activate
