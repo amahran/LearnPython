@@ -12,18 +12,38 @@ import requests
 # jason used to read the data passed back by the web service
 import json
 
-SUBSCRIPTION_KEY = "a73bb5f29795e3e452e2"
+# Web service peronal key (from my email) 
+from dotenv import load
+load()
+import os
+key = os.getenv('SUBSCRIPTION_KEY')
 
-service_address = "https://free.currconv.com"
-address = service_address + "/api/v7/convert?q=USD_PHP,PHP_USD&compact=ultra&apiKey=" + SUBSCRIPTION_KEY
+# Get input from the user
 print()
-r = requests.get(url=address, verify=False)
+convert_from = input('Convert from currency? ').upper()
+convert_to = input('Convert to currency? ').upper()
+amount = input('Enter amount in ' + convert_from + ': ')
 
-txt = r.text
+# Build te web service url 
+# Example: https://free.currconv.com/api/v7/convert?q=EUR_EGP&compact=ultra&apiKey=<KEY>
+service_address = "https://free.currconv.com"
+address = service_address + "/api/v7/convert?q="+ convert_from + "_" + convert_to + "&compact=ultra&apiKey=" + key
 
-outdict = eval(txt.replace("\"", "\'"))
+print()
 
-print(txt)
-print(outdict['USD_PHP'])
-#print(dict(r.text))
+# Call the API and save the response
+response = requests.get(url=address)
+
+# Raise eny errors happend during the HTTP call 
+response.raise_for_status()
+
+# Format the response as json (basically organized in ciollection 'a dictionary')
+data = response.json()
+
+# Convert the entered amunt to the desired currency rounded in hunderedth
+converted_amount = float(amount) * (round(100 * data[convert_from + "_" + convert_to]) / 100)
+
+# Output to the user
+print(amount + ' ' + convert_from +  ' = ' + str(converted_amount) + ' ' + convert_to)
+
 print()

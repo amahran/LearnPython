@@ -40,4 +40,4 @@ virtualenv <folder_name>
 ../<folder_name>/Scripts/activate
 
 ## OSX\Linux (Bash)
-<folder_name>/bin/activate
+source <folder_name>/bin/activate
