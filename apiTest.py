@@ -26,6 +26,7 @@ amount = input('Enter amount in ' + convert_from + ': ')
 
 # Build te web service url 
 # Example: https://free.currconv.com/api/v7/convert?q=EUR_EGP&compact=ultra&apiKey=<KEY>
+# For more information see https://www.currencyconverterapi.com/docs
 service_address = "https://free.currconv.com"
 address = service_address + "/api/v7/convert?q="+ convert_from + "_" + convert_to + "&compact=ultra&apiKey=" + key
 
@@ -47,3 +48,10 @@ converted_amount = float(amount) * (round(100 * data[convert_from + "_" + conver
 print(amount + ' ' + convert_from +  ' = ' + str(converted_amount) + ' ' + convert_to)
 
 print()
+
+# Get list of currencies
+# address = service_address + "/api/v7/currencies?apiKey=" + key
+# response = requests.get(url=address)
+# response.raise_for_status()
+# data = response.json()
+# print(json.dumps(data))
