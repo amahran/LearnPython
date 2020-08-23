@@ -1,4 +1,8 @@
 # LearnPython
 Learning Python
 
-Stopped on Video #35
+Python for beginners from Microsoft developer
+    Finished
+
+More Python for beginners from Microsoft developer
+    Stopped at video #6

@@ -1,0 +1,39 @@
+Rules are defined for PEP 8
+
+Python Enhancement Proposal #8
+
+Common rules:
+- Spaces not tabs
+- variabble_name not variablename or variablename
+- Avoid extraneous witespace
+{'good': 42}
+{'bad' : 20}
+-------------------------------------------------------------------------
+To avoid most of these issues or to follow these rules automatically
+Use Linting (to identify formatting issues)
+
+Pylint for Python
+# Windows 
+pip install pylint
+# Macos / Linux
+pip3 install pylint
+
+Configurable to ignore certain rules
+Automatically run by cisual studio code
+-------------------------------------------------------------------------
+Use docstring for inline documentation (""" is used to create a multiline string linear inside a python code)
+def print_hello(name:str) -> str:
+    """
+    Greets the user by name
+
+    Parameters:
+        name (str): the name of the user
+    returns: str: The greeting
+    """
+
+    print('Hello, ' + name)
+-------------------------------------------------------------------------
+Use type hintes: 
+for examlpe the code above indicating the datatype of the function argument is string and the return will be string
+just in case the varaible names doesn't indicate the datatype expected
+
