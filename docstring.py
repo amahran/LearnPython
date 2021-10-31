@@ -1,3 +1,7 @@
+'''
+module doc string
+'''
+
 def print_hello(name: str) -> str:
     """
     Greets the user by name
@@ -7,7 +11,7 @@ def print_hello(name: str) -> str:
     returns: str: The greeting
     """
 
-    return('Hello, ' + name)
+    return 'Hello, ' + name
 
 # Notice when you hover over the function name
 print_hello(42)

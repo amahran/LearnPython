@@ -1,21 +1,22 @@
+'''
 # You can call a function stored in a webservice
-# For that request lib is used 
+# For that request lib is used
 #   # Check documentation for the acceptable values
 #   requests.post(address,
 #                 http_headers,
 #                 function_parameters,
 #                 message_body)
-
+'''
+import os
 # use the requests lib to simplify making a REST API call from python
 import requests
 
 # jason used to read the data passed back by the web service
-import json
+#import json
 
-# Web service peronal key (from my email) 
+# Web service peronal key (from my email)
 from dotenv import load
 load()
-import os
 key = os.getenv('SUBSCRIPTION_KEY')
 
 # Get input from the user
@@ -24,18 +25,19 @@ convert_from = input('Convert from currency? ').upper()
 convert_to = input('Convert to currency? ').upper()
 amount = input('Enter amount in ' + convert_from + ': ')
 
-# Build te web service url 
+# Build te web service url
 # Example: https://free.currconv.com/api/v7/convert?q=EUR_EGP&compact=ultra&apiKey=<KEY>
 # For more information see https://www.currencyconverterapi.com/docs
-service_address = "https://free.currconv.com"
-address = service_address + "/api/v7/convert?q="+ convert_from + "_" + convert_to + "&compact=ultra&apiKey=" + key
+SERVICE_ADDRESS = "https://free.currconv.com"
+ADDRESS = SERVICE_ADDRESS + \
+        "/api/v7/convert?q="+ convert_from + "_" + convert_to + "&compact=ultra&apiKey=" + key
 
 print()
 
 # Call the API and save the response
-response = requests.get(url=address)
+response = requests.get(url=ADDRESS)
 
-# Raise eny errors happend during the HTTP call 
+# Raise eny errors happend during the HTTP call
 response.raise_for_status()
 
 # Format the response as json (basically organized in ciollection 'a dictionary')

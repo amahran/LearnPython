@@ -1,3 +1,6 @@
+'''
+error handling
+'''
 from datetime import datetime
 
 birthday = input('What is your birthday (dd/mm/yyyy)? ')
@@ -14,15 +17,15 @@ finally:
     print('This will run whatever try was successful or failed')
 
 
-x = 7
-y = 0
+X = 7
+Y = 0
 
 try:
-    print (x / y)
-except ZeroDivisionError as e:
-    print ('Not allowed to divide by zero')
+    print(X / Y)
+except ZeroDivisionError as exception:
+    print('Not allowed to divide by zero')
 else:
-    print ('Something went wrong')
+    print('Something went wrong')
 finally:
     print('This is our cleanup code')
 

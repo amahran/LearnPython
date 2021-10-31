@@ -1,4 +1,6 @@
-# This is to test how to import a module
+'''
+This is to test how to import a module
+'''
 
 ############ Method 1: Import module as namespace
 import helpers
