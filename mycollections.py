@@ -1,7 +1,7 @@
 # By collectios you can create arrays, lists and so on
 
 ########### Lists => Store anything, store any type ################
-names = ['Alaa', 'Hisham'] # [] for creatign lists
+names = ['Alaa', 'Hisham'] # [] for creating lists
 scores = []
 
 scores.append(98) # Add new item to the end
